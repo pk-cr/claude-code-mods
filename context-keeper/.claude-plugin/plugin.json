@@ -1,0 +1,35 @@
+{
+  "name": "context-keeper",
+  "version": "0.2.0",
+  "description": "A toast at 60% and 75% of the compaction point asks you to run /compact at the end of the task, while the cache is warm. /keeper shows the context fill. The handoff template lives in CLAUDE.md under \"# Compact Instructions\", because the engine skips installed mods' compaction hooks where an organization manages Claude Code. Reads token counts only. Sends nothing out and stores nothing on disk.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "Toast mode",
+      "description": "ask (default): a toast at the two levels asks you to run /compact. off: no toast. /keeper mode changes it for this session.",
+      "default": "ask",
+      "options": [
+        "ask",
+        "off"
+      ]
+    },
+    "nudgeAtPercent": {
+      "type": "number",
+      "title": "First toast (percent of the compaction point)",
+      "description": "After an answer, the first toast shows when the context is at this percent of the compaction point.",
+      "default": 60
+    },
+    "nudgeAgainAtPercent": {
+      "type": "number",
+      "title": "Second toast (percent of the compaction point)",
+      "description": "The second and last toast shows at this percent. The toasts start again when the context drops below the first level, as after a compaction.",
+      "default": 75
+    }
+  },
+  "author": {
+    "name": "pk-cr"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

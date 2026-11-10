@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "about": "Model and effort per gauntlet role. The orchestrator passes them as the Agent tool's model and effort parameters. Rules: Sonnet and Opus only, so model must be sonnet or opus (a full id of those families, such as claude-opus-5-5, reads as its family); a competitor on opus runs at medium effort or lower, so the judges (opus high) stay stronger. init stops on anything else. effort is low, medium, high, xhigh or max. A role may name another role instead of its own setup (swap_judge = judge). init --models mixed (the default) keeps the judge roles from this file and gives half the competitors opus medium and half sonnet high.",
+  "roles": {
+    "competitor": {
+      "model": "sonnet",
+      "effort": "high"
+    },
+    "judge": {
+      "model": "opus",
+      "effort": "high"
+    },
+    "swap_judge": "judge",
+    "harvest_check": "judge",
+    "final": {
+      "model": "opus",
+      "effort": "high"
+    }
+  }
+}

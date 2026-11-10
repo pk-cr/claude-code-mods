@@ -1,0 +1,91 @@
+{
+  "name": "delegate",
+  "version": "0.1.4",
+  "author": {
+    "name": "pk-cr"
+  },
+  "description": "Consistent subagent deployment. A short delegation policy for the model, one nudge when a turn reads a lot without delegating, a check on each Agent call (deny once if the brief is vague or untagged, then add a return-format and done-when footer, block agents that start agents), caps on how many run at once, warnings at token and five-hour-window levels, five role agents, and /delegate score. Works beside agent-radar, which still picks model and effort. Reads usage numbers, tool names and Agent call fields. Sends nothing out and keeps only counts.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "policyText": {
+      "type": "boolean",
+      "title": "Add the delegation policy to the system prompt",
+      "description": "Adds a short policy section to the system prompt and one note to the Agent tool's description. Takes effect for new sessions.",
+      "default": true
+    },
+    "nudge": {
+      "type": "boolean",
+      "title": "Nudge after a long read-only run",
+      "description": "When one turn makes this many read-only calls in a row with no Agent call, the model gets one note about splitting the reads across subagents.",
+      "default": true
+    },
+    "nudgeRun": {
+      "type": "number",
+      "title": "Read-only calls before the nudge",
+      "description": "How many read-only calls in a row make a turn read-heavy. 0 turns the nudge off.",
+      "default": 6
+    },
+    "normalise": {
+      "type": "boolean",
+      "title": "Check each Agent call",
+      "description": "Deny a vague or untagged brief once, then add a return-format, done-when and no-spawn footer to a brief that lacks them.",
+      "default": true
+    },
+    "requireTag": {
+      "type": "boolean",
+      "title": "Require a difficulty tag",
+      "description": "Part of the check: a brief without [difficulty: ...] is denied once so that agent-radar can route it.",
+      "default": true
+    },
+    "blockNested": {
+      "type": "boolean",
+      "title": "Block agents that start agents",
+      "description": "A general-purpose, Explore or Plan subagent may not start another agent. Orchestrator agents from other plugins are not blocked.",
+      "default": true
+    },
+    "maxLive": {
+      "type": "number",
+      "title": "Most agents running at once",
+      "description": "A new agent is denied while this many run. 0 turns the cap off.",
+      "default": 8
+    },
+    "maxTurn": {
+      "type": "number",
+      "title": "Most agents started in one turn",
+      "description": "0 turns the cap off.",
+      "default": 16
+    },
+    "maxSession": {
+      "type": "number",
+      "title": "Most agents started in one session",
+      "description": "0 turns the cap off.",
+      "default": 25
+    },
+    "warnTokens": {
+      "type": "number",
+      "title": "Subagent token warning",
+      "description": "A toast shows when the subagents of this session have used this many input, cache-write and output tokens. Warn only: nothing is denied. 0 turns it off.",
+      "default": 2500000
+    },
+    "alertTokens": {
+      "type": "number",
+      "title": "Subagent token alert",
+      "description": "A second, stronger toast at this many tokens. Warn only. 0 turns it off.",
+      "default": 5000000
+    },
+    "warnWindow": {
+      "type": "number",
+      "title": "Five-hour window warning (percent)",
+      "description": "A toast shows when the five-hour window passes this percent. Warn only. 0 turns it off.",
+      "default": 80
+    },
+    "alertWindow": {
+      "type": "number",
+      "title": "Five-hour window alert (percent)",
+      "description": "A second toast at this percent. Warn only. 0 turns it off.",
+      "default": 92
+    }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "usage-meter",
+  "version": "0.2.0",
+  "description": "Token, cost, context and rate-limit meter: a status entry, a band above the prompt, a pane (Overview, Models, Agents, Diagnostics) and threshold toasts. Reads usage numbers only. Sends nothing out and stores nothing on disk.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "costAlertUsd": {
+      "type": "number",
+      "title": "Session cost alert (USD)",
+      "description": "A toast shows each time the session's estimated cost passes another multiple of this amount. 0 turns the cost alert off.",
+      "default": 10
+    }
+  },
+  "author": {
+    "name": "pk-cr"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

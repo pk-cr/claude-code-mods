@@ -1,0 +1,54 @@
+{
+  "name": "claude-code-mods",
+  "owner": {
+    "name": "pk-cr"
+  },
+  "description": "Claude Code mods: plugins with function hooks for panes, bands, toasts, routing and subagent tooling.",
+  "plugins": [
+    {
+      "name": "agent-radar",
+      "source": "./agent-radar",
+      "description": "Pixel-art studio view of your subagents with status cards, a cross-session office building, and a local router that picks each subagent's model and effort. Sends nothing out."
+    },
+    {
+      "name": "clawd",
+      "source": "./clawd",
+      "description": "A pixel mascot in the band above the prompt that reacts to what the session is doing. Sends nothing out."
+    },
+    {
+      "name": "context-keeper",
+      "source": "./context-keeper",
+      "description": "Toasts at 60% and 75% of the compaction point that ask you to run /compact at the end of a task. /keeper shows the context fill."
+    },
+    {
+      "name": "conversation-atlas-plus",
+      "source": "./conversation-atlas-plus",
+      "description": "A live map of your session and your other sessions: goal, current activity, tasks, open questions and working files. Rebuilt from Conversation Atlas (MIT, by Neel)."
+    },
+    {
+      "name": "delegate",
+      "source": "./delegate",
+      "description": "Consistent subagent deployment: a delegation policy, a check on each Agent call, concurrency caps, warn-only token budgets, five role agents and /delegate score."
+    },
+    {
+      "name": "gauntlet",
+      "source": "./gauntlet",
+      "description": "/gauntlet: fresh sub-agents compete on one hard task, attack and defend each other's answers, and a blind judge picks the winner. Built from arena-skill (MIT, Jake Schincariol)."
+    },
+    {
+      "name": "mod-dock",
+      "source": "./mod-dock",
+      "description": "A dock above the prompt that lists your mods, marks the loaded ones and opens each mod's window."
+    },
+    {
+      "name": "session-pulse",
+      "source": "./session-pulse",
+      "description": "A board (/pulse) of every session on this machine: which need you, which are working, which are done. Sends nothing out."
+    },
+    {
+      "name": "usage-meter",
+      "source": "./usage-meter",
+      "description": "Token, cost, context and rate-limit meter: a status entry, a band, a pane and threshold toasts. Sends nothing out."
+    }
+  ]
+}

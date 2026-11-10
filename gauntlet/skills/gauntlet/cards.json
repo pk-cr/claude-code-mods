@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "about": "Strategy cards for /gauntlet. Each competitor gets one lens, one workflow and one priority. The dealer gives every competitor a different lens, and a different workflow and priority while the lists last. Lenses are written for general hard tasks: code, analysis, design, writing, SQL and docs. Edit freely; ids must stay unique within a list.",
+  "lenses": [
+    {
+      "id": "data-skeptic",
+      "name": "Data skeptic",
+      "how": "Assume the inputs are wrong until shown otherwise. Before you trust a number or a file, check how it could be broken: join fan-out, placeholder or blank values, partial periods, time zones, test or internal records, double counting across sources, a definition that changed mid-series. Build the answer only on what survives."
+    },
+    {
+      "id": "confounders",
+      "name": "What else moved",
+      "how": "For every change or effect the task involves, list what else changed in the same window: releases, configuration changes, seasonal patterns, upstream or dependency changes, traffic or usage shifts, new users or sources. Separate those from the effect the task is about, or say plainly that you cannot."
+    },
+    {
+      "id": "test-first",
+      "name": "Test first",
+      "how": "Decide first how you would prove the answer right on data or cases it did not see: the hold-out set or test cases, the error measure and its unit, the naive baseline it has to beat. Then build the answer that passes that test, and report how it would score."
+    },
+    {
+      "id": "exec-reader",
+      "name": "The decision-maker",
+      "how": "Name the decision the reader has to make and the one result they will quote. Build the answer around it: its unit, what it is a percent of, its range, and its biggest limit. Anything that does not change the decision goes to an appendix or out."
+    },
+    {
+      "id": "simplest-model",
+      "name": "Simplest model that works",
+      "how": "Start from the simplest method that could meet the requirements: a ratio, a rule, a seasonal naive, one regression. Add a part only when you can name the error it removes and roughly how big that error is."
+    },
+    {
+      "id": "pre-mortem",
+      "name": "Pre-mortem",
+      "how": "It is three months later and this answer was wrong in front of the team. Write down the three most likely reasons. Then build the answer so that each one is prevented, detected early, or stated up front as a limit."
+    },
+    {
+      "id": "second-order",
+      "name": "Second-order effects",
+      "how": "Map how the parts affect each other: modules that depend on each other, callers that rely on current behaviour, a limit or target that changes how people act, a metric that people will game once it is a target. Optimise the whole system, not the one part the task points at."
+    },
+    {
+      "id": "worked-example",
+      "name": "Worked example",
+      "how": "Solve one concrete case end to end first, with realistic values (one input, one user, one file). Generalise only from what that case taught you, and keep the worked case in the answer if it helps the reader check it."
+    },
+    {
+      "id": "contrarian",
+      "name": "Contrarian",
+      "how": "Write down the answer most analysts would give first, then argue seriously against it. Keep only what survives, even if that takes you the unpopular way. If the default survives, say why with evidence."
+    },
+    {
+      "id": "cost-benefit",
+      "name": "Cost and benefit",
+      "how": "Translate every choice into cost and benefit: time, money, risk, maintenance load, the cost of the next unit of work. Prefer the option with the best outcome under realistic numbers, and show the arithmetic."
+    }
+  ],
+  "workflows": [
+    {
+      "id": "reconcile-to-source",
+      "name": "Reconcile to a source",
+      "how": "Before you conclude anything, tie at least one number in your answer to an independent source or a second route (a known total, a figure the task gives, a hand calculation). Report whether it ties and by how much."
+    },
+    {
+      "id": "requirements-checklist",
+      "name": "Requirements checklist",
+      "how": "Extract every requirement and constraint from the task into a numbered list. Solve. Then go down the list and check each item against your answer, and fix every miss before you submit."
+    },
+    {
+      "id": "options-matrix",
+      "name": "Options matrix",
+      "how": "Lay out two to four real options against the criteria that matter for this task. Score them honestly, pick one, and say what would make you switch to the runner-up."
+    },
+    {
+      "id": "draft-critique-rewrite",
+      "name": "Draft, critique, rewrite",
+      "how": "Write a complete first draft fast. Critique it as a hostile reviewer would, in writing. Rewrite it from the critique. Submit only the rewrite."
+    },
+    {
+      "id": "smallest-version-first",
+      "name": "Smallest version first",
+      "how": "Build the smallest version that fully answers the core question. Check it. Then add, one at a time, only the parts the task requires, checking each before the next."
+    },
+    {
+      "id": "assumptions-first",
+      "name": "Assumptions first",
+      "how": "List every assumption the answer depends on, and for each one say how sensitive the result is to it (what happens if it is 20 percent off). Resolve the ones you can from the task's files; label the rest in the answer."
+    }
+  ],
+  "priorities": [
+    {
+      "id": "defensible",
+      "name": "Defensible under review",
+      "how": "When trade-offs conflict, pick what you can defend with evidence when a sceptical reviewer pushes back. Every claim gets a number or a source."
+    },
+    {
+      "id": "honest-limits",
+      "name": "Honest limits",
+      "how": "When trade-offs conflict, pick what is true over what is reassuring. State each limit with its measured size. Never overstate accuracy or certainty."
+    },
+    {
+      "id": "fewest-moving-parts",
+      "name": "Fewest moving parts",
+      "how": "When trade-offs conflict, pick the version with fewer inputs, steps and parameters that someone else could rerun and maintain."
+    },
+    {
+      "id": "decision-speed",
+      "name": "Decision now",
+      "how": "When trade-offs conflict, pick what lets the reader decide or act this week, and say what you would refine later in a separate Later section."
+    },
+    {
+      "id": "edge-cases",
+      "name": "Edge cases first",
+      "how": "When trade-offs conflict, pick what holds up for small inputs, new cases, empty or missing data and the points around a structural break."
+    },
+    {
+      "id": "rigour",
+      "name": "Statistical rigour",
+      "how": "When trade-offs conflict, pick the method with honest uncertainty: intervals, out-of-sample checks, the right unit of analysis, and no leakage from the future."
+    }
+  ]
+}

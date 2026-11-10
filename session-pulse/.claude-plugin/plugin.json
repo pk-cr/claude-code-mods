@@ -1,0 +1,11 @@
+{
+  "name": "session-pulse",
+  "version": "0.1.0",
+  "description": "See at a glance which of your sessions needs you, which are working and which are done. A board pane (/pulse) lists every session on this machine with a status mark left of its name (needs you, working, ready, failed, idle, offline), sorted so the ones waiting on you come first, with how long each has waited or run. A one-line band above the prompt counts the other sessions and names the one that has waited longest; it hides when nothing is going on. /pulse next names the session to look at. Optional (/pulse pin on): a session pins itself in the sidebar while it waits on you and unpins after. On disk it keeps one small status file per session in ~/.claude/session-pulse/live (title, status words, tool name, times; no prompt, thinking or answer). Sends nothing out.",
+  "author": {
+    "name": "pk-cr"
+  },
+  "types": "./types/index.d.ts",
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

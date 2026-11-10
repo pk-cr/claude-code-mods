@@ -1,0 +1,25 @@
+{
+  "name": "mod-dock",
+  "version": "0.4.0",
+  "description": "A dock above the prompt that lists every mod you have built, marks which are loaded in this session, and opens or closes each mod's window with one click. A Mods N/M button in the prompt footer and the /dock pane reach the same list when another mod holds the band. A mod that is not loaded is never copied or loaded by the dock: a pick says to run /reload-plugins (installed) or sync.sh (not installed). Shows an installed mod's installed version. Reads mod manifests, the installed-plugin registry and the slash-command list. Writes nothing, sends nothing out and stores nothing.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "hidden": {
+      "type": "string",
+      "title": "Hidden mods",
+      "description": "Mod names the dock leaves out of its list, separated by commas.",
+      "default": "hot-reload-on"
+    },
+    "modsDir": {
+      "type": "string",
+      "title": "Mods folder",
+      "description": "Folder that holds one sub-folder per session, each with mods inside (the dev-mods folder). Leave empty to find it from where the dock itself is installed.",
+      "default": "hot-reload-on"
+    }
+  },
+  "author": {
+    "name": "pk-cr"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

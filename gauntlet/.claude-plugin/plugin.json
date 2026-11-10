@@ -1,0 +1,10 @@
+{
+  "name": "gauntlet",
+  "version": "0.4.1",
+  "author": {
+    "name": "pk-cr"
+  },
+  "description": "/gauntlet: a small tournament of fresh sub-agents for one hard task. 4 competitors by default (2, 4 or 8), each with a different strategy card written for general hard tasks (code, analysis, design, writing, SQL, docs); they attack each other's answers, defend and revise, and a blind judge scores each match on a fixed rubric until one answer is left. Competitors are resumed for the attack and defend steps, so a 4-competitor run starts up to 9 agents (about 22 calls in total) and fits the delegate mod's caps. Sonnet and Opus only: by default half the competitors run on Opus medium and half on Sonnet high (Opus against Sonnet in every round-1 match; a gladiator never runs above Opus medium), `--models sonnet` puts them all on Sonnet, and judges are Opus high from models.json. Each judge sees only its own view folder with the pair as X and Y; `next` audits every sub-agent transcript (read only) and takes back a verdict from a judge that looked elsewhere, and stops when a finished file changes. A swap judge checks position bias, the champion answers every attack still standing, and a harvest check lets that revision out only if it is not worse. `tokens-from-radar` reads real token usage per agent from agent-radar's live file (read only), and `rate` keeps one metadata-only line per run (no solution text) with a cost estimate in ~/.claude/gauntlet-log for `history`. Built from the logic of arena-skill (MIT, Jake Schincariol). Writes only inside .gauntlet/ in the current directory and that ledger, and sends nothing out.",
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

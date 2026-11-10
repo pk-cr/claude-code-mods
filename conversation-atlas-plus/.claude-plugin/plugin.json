@@ -1,0 +1,35 @@
+{
+  "name": "conversation-atlas-plus",
+  "version": "0.3.0",
+  "description": "A live map of your Claude Code session and your other sessions: your goal, what Claude is doing now, tasks, open questions, the conversation, activity and working files. Rebuilt from Conversation Atlas (MIT, by Neel).",
+  "author": {
+    "name": "Neel (original Conversation Atlas); rebuild by pk-cr"
+  },
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "summaries": {
+      "type": "string",
+      "title": "Summaries",
+      "description": "both (default): after each answer a short digest goes to Haiku, and /atlas sync asks Claude to re-read the session. each turn: only the Haiku digest. on demand: only /atlas sync. off: no model calls; the map uses engine events and what you set. Every call goes through this session's own Anthropic client.",
+      "default": "both",
+      "options": [
+        "both",
+        "each turn",
+        "on demand",
+        "off"
+      ]
+    },
+    "desktopSessions": {
+      "type": "string",
+      "title": "Desktop sessions in the list",
+      "description": "on (default): the Sessions list adds your other sessions from the Claude desktop app on this Mac (titles and state). off: only sessions Atlas mapped.",
+      "default": "on",
+      "options": [
+        "on",
+        "off"
+      ]
+    }
+  },
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}

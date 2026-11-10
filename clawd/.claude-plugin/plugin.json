@@ -1,0 +1,11 @@
+{
+  "name": "clawd",
+  "version": "0.1.0",
+  "description": "Clawd, a pixel mascot at the right end of the band above the prompt: working (by tool), waiting on you, delegating, a party when a turn ends, then relaxing. Desktop and VS Code only. Reads no file and sends nothing out.",
+  "author": {
+    "name": "pk-cr"
+  },
+  "types": "./types/index.d.ts",
+  "license": "MIT",
+  "repository": "https://github.com/pk-cr/claude-code-mods"
+}
